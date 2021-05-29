@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Compras</title>
+	<link rel="stylesheet" type="text/css" href="CSS2/folhasdeestilo2.css">
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+	<script type="text/javascript">
+		function ehMascara() {
+			var Selecionado = document.getElementById("Produto").value;
+			var Mascaras = ["Mas. Lisa","Mas. Cometa"];
+			var selecionouMascara = Mascaras.includes(Selecionado);
+
+			if (selecionouMascara) {
+				document.getElementById("Cor").disabled = false;
+           		document.getElementById("Azul").disabled = true;
+           		document.getElementById("Lilas").disabled = true;
+           		document.getElementById("Modelo").disabled = true;
+           		document.getElementById("Tamanho").disabled = true;
+			}
+			else {
+				document.getElementById("Cor").disabled = false;
+           		document.getElementById("Azul").disabled = false;
+           		document.getElementById("Lilas").disabled = false;
+           		document.getElementById("Modelo").disabled = false;
+           		document.getElementById("Tamanho").disabled = false;
+			}
+			}
+			
+			var descricao = []
+			var selecoes = []
+			var totalItens = ""
+			var soma = 0
+
+		function estaPronto(campo) { // Letra A
+			var Selecionado = document.getElementById("Produto").value;
+			var Mascaras = ["Mas. Lisa","Mas. Cometa"];
+			var selecionouMascara = Mascaras.includes(Selecionado);
+			
+				selecoes.push(campo)
+				if (selecionouMascara) {
+					return selecoes.includes("Produto")&&selecoes.includes("Cor")
+				}
+				else {return selecoes.includes("Produto")&&selecoes.includes("Cor")&&selecoes.includes("Tamanho")&&selecoes.includes("Modelo")}
+
+			}
+
+
+		function montaDescricao(elemento) { // Letra B
+			
+			var Selecionado = document.getElementById("Produto").value;
+			var Mascaras = ["Mas. Lisa","Mas. Cometa"];
+			var selecionouMascara = Mascaras.includes(Selecionado);
+
+			descricao.push(elemento.value)
+			console.log(descricao)
+			if (estaPronto(elemento.id)) {
+				
+				document.getElementById("resumo").value = descricao.join(" - ")
+				if (selecionouMascara){
+					document.getElementById("valor").value = "35,00"
+					soma += 35.00
+				}
+				else {
+					document.getElementById("valor").value = "70,00"
+					soma += 70.00
+				}
+			}
+		}
+
+		function limparCampos() { // Letra C
+			document.getElementById("Produto").value = ""
+			document.getElementById("Cor").value = ""
+			document.getElementById("Tamanho").value = ""
+			document.getElementById("Modelo").value = ""
+			document.getElementById("resumo").value = ""
+			document.getElementById("valor").value = ""
+			descricao = []
+			selecoes = []
+		}
+
+
+		function concluido() { // Letra D
+
+			if(estaPronto()) {
+				totalItens += descricao.join(" - ") + "\n"
+				document.getElementById("listaCompras").innerHTML = totalItens
+				limparCampos()
+				document.getElementById("valor2").value = soma
+			}
+			else {
+				alert("Definição do produto não está completa!")
+			}
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<div class="divCompras">
+		<form name="Identificacao" action="Identificacao.html" method="get">
+			<fieldset>
+					<legend>
+						Identificação
+					</legend>
+					<div class="divLinha">
+					<label class="colPri">
+						Nome: 
+					</label>
+					<input class="inpGrande" type="text" name="Nome">
+					</div>
+					<div class="divLinha">
+					<label class="colPri">
+						E-mail: 
+					</label>
+					<input class="inpGrande" type="text" name="E-mail">
+					</div>
+					<label class="colPri">
+						Endereço: 
+					</label>
+					<textarea class="impEnder"></textarea>
+					<fieldset class="fsDir">
+						<legend>
+							Genero:
+						</legend>
+						<input type="radio" name="Genero" value="Mas" id="Mas">
+						<label for="Mas">Mas</label>
+						<input type="radio" name="Genero" value="Fem" id="Fem">
+						<label for="Fem">Fem</label>
+						<input type="radio" name="Genero" value="Outro" id="Outro">
+						<label for="Outro">Outro</label>
+					</fieldset>
+					<fieldset class="fsDir">
+						<legend>
+							Nascimento:
+						</legend>
+						<label for="data">
+							<input maxlength="2" class="numDD" type="number" id="data" name="dia" min="01" max="31">
+							/
+							<input maxlength="2" class="numDD" type="number" id="data" name="mes" min="01" max="12">
+							/
+							<input maxlength="4" class="numQD" type="number" id="data" name="ano" min="1900" max="2021">
+						</label>
+					</fieldset>
+					<div class="divLinha">
+					<label class="colPri">
+						Telefone: 
+					</label>
+					<input class="impTelef" type="text" name="Telefone">
+					</div>
+					<label class="colPri">
+						Celular:
+					</label>
+					<input class="impTelef" type="text" name="Celular">
+				</fieldset>
+			<form id="formSelecao" name="IdentificacaoProduto" action="IdentificacaoProduto.html" method="get">
+			<fieldset>
+			<legend>
+				Seleção de Produtos e Lista de Compras
+			</legend>
+			<fieldset class="elemEsq">
+				<legend>
+					Selecionado
+				</legend>
+				<label class="colLabSelProd" for="Produto">Produto:
+					<select name="Produtos" id="Produto" onchange="ehMascara();montaDescricao(this)" class="colSelProd">
+					<option value="">---</option>
+					<optgroup id="Camisa" label="Camisa">
+					<option value="Cam. Lisa">Lisa</option>
+					<option value="Cam. Mercúrio">Mercúrio</option>
+					<option value="Cam. Vênus">Vênus</option>
+					<option value="Cam. Terra">Terra</option>
+					<option value="Cam. Marte">Marte</option>
+					<option value="Cam. Júpiter">Júpiter</option>
+					<option value="Cam. Saturno">Saturno</option>
+					<option value="Cam. Urano">Urano</option>
+					<option value="Cam. Netuno">Netuno</option>
+					<option value="Cam. Plutão">Plutão</option>
+					</optgroup>
+					<optgroup id="Mascara" label="Mascara">
+					<option value="Mas. Lisa">Lisa</option>
+					<option value="Mas. Cometa">Cometa</option>
+					</optgroup>
+				</select>
+				</label>
+				<br><br>
+				<label class="colLabSelProd" for="Cor">
+					Cor:
+					<select onchange="montaDescricao(this)" name="Cor" disabled="" id="Cor" class="colSelProd">
+					<option value="">---</option>
+					<option value="Pr">Preto</option>
+					<option value= "Br">Branco</option>
+					<option value="Az" disabled="" id="Azul">Azul</option>
+					<option value="Li" disabled="" id="Lilas">Lilas</option>
+				</select>
+				</label>
+				<br><br>
+				<label class="colLabSelProd" for="Tamanho">
+					Tamanho:
+					<select onchange="montaDescricao(this)" name="Tamanho" id="Tamanho" disabled="" class="colSelProd">
+					<option value="">---</option>
+					<option value="P">Pequena</option>
+					<option value="M">Média</option>
+					<option value="G">Grande</option>
+					<option value="GG">Extra Grande</option>
+				</select>
+				</label>
+				<br><br>
+				<label class="colLabSelProd" for="Modelo">
+					Modelo:
+					<select onchange="montaDescricao(this)" Name="Modelo" id="Modelo" disabled="" class="colSelProd">
+					<option value="">---</option>
+					<option value="TS">T-Shirt</option>
+					<option value="BL">Baby Look</option>
+					<option value="SM">Sem Manga</option>
+				</select>
+				</label>
+				<br><br>
+				<input id="resumo" class="linhaProdSel" type="text" name="resumo">
+				<br>
+				<label for="Comprar">
+					<input onclick="concluido()" class="elemEsq" class="botoes" type="button" name="Comprar" value="Comprar">
+					<label for="Valor" class="elemDir">R$
+				<input id="valor" class="impMedio" type="text" name="valor">
+				</label>
+				</label>
+			</fieldset>
+			</form>
+			<label><textarea id="listaCompras" class="listaCompras" readonly></textarea>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<label class="elemDir" for="Total"> Total R$ <input id="valor2" class="impMedio" readonly type="text" name="total"></label></label>
+			</fieldset>
+			<div class="botoes"><button type="submit">Continuar</button>
+			<input type="reset" name="Limpar" value="Limpar">
+			<div>
+		</form>
+		</div>
+	</section>
+</body>
+</html>

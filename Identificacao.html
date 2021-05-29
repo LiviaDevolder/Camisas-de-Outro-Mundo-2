@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Finalizar Compra</title>
+	<link rel="stylesheet" type="text/css" href="CSS2/folhasdeestilo2.css">
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+</head>
+<body>
+	<section>
+		<div class="divCompras">
+			<form method="get">
+				<fieldset>
+					<legend>
+						Pagamento
+					</legend>
+					<fieldset class="fsEsq">
+						<legend>
+							Cartão
+						</legend>
+						<div class="divLinha">
+						<fieldset>
+							<legend>
+								Bandeira:
+							</legend>
+							<input type="radio" name="Bandeira" value="Visa" id="Visa">
+							<label for="Visa">Visa</label>
+							<input type="radio" name="Bandeira" value="Master" id="Master">
+							<label for="Master">Master</label>
+							<input type="radio" name="Bandeira" value="Elo" id="Elo">
+							<label for="Elo">Elo</label>
+						</fieldset>
+						</div>
+						<br>
+						<div class="divLinha">
+						<label class="colPriCompras">
+							Validade:
+						</label>
+						<input maxlength="2" class="numDD" type="number" id="data" name="mes" min="01" max="12">
+							/
+							<input maxlength="4" class="numQD" type="number" id="data" name="ano" min="2021" max="2050"> 
+						</div>
+						<div class="divLinha">
+							<br>
+						<label class="colPriCompras">
+							Número: 
+						</label>
+						<input class="impNCC" type="text" name="numCartao">
+						</div>
+					</fieldset>
+					<textarea readonly class="comprasFeitas"></textarea>
+					<br><br><br><br><br><br><br><br><br><br>
+					<label class="elemDir">
+						Valor R$ <input class="impMedio" type="text" name="valor">
+					</label>
+				</fieldset>
+				<div class="botoes"><button type="submit">Enviar</button>
+			<input type="reset" name="Limpar" value="Limpar">
+			<div>
+			</form>
+		</div>
+	</section>
+</body>
+</html>

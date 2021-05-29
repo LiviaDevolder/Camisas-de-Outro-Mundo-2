@@ -1,0 +1,18 @@
+folhadeestilo.css
+
+table,tr,td
+{font-family: tahoma;
+text-align: center;
+height: 25px;
+border-style: 0px;
+width: 170px;}
+
+p,address
+{font-family: tahoma;
+color: #FFFF00;
+text-align: center;}
+
+a:link
+{color:#FFFF00}
+a:visited
+{color:#EEEE00}

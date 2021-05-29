@@ -1,0 +1,193 @@
+/*CSS Document*/
+body {background-color: #551177;
+	font-size: 16px;
+	font-family: Open sans, sans-serif;
+	color: #FFFF00;}
+nav { display:block;
+	border-style: solid;
+	border-width: 0px 0px 2px 0px;
+	padding: 4px;
+	margin-bottom: 4px;
+	margin: 2px;
+	text-align: center;
+	font-size: 18px;
+	font-family: Mulish, sans-serif;}
+nav.menu {align-content: center;
+	margin: 1px auto;
+	word-spacing: 65px}
+header {display: block;
+	padding: 0px;
+	border-bottom: 0px;
+	margin-bottom: 0px;
+	text-align: center;}
+img.imgLogo {margin-bottom: 4px;
+	padding-bottom: 4px;}
+section.apres {text-align: center;
+	font-size: 18px;}
+a:link {color: #FFFF00;
+	text-decoration: none;}
+a:visited {color: #EEEE00;
+	text-decoration: none;}
+.botao {margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 4px;
+	margin-right: 4px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 4px;
+	padding-right: 4px;
+	width: 120px;
+	display: inline-block;}
+section { display:block; }
+footer { clear: both; }
+footer.ender {text-align: center;
+	font-size: 14px;
+	padding: 10px;
+	padding-top: 10px;}
+section.ilusMasc {margin: auto;
+	float: center;
+	display: block;}
+img.imgMasc {border-style: solid;
+	border-width: 2px;
+	border-color: orange;
+	margin: 10px;}
+ul.lisDescricao {color: #FFFF00;
+	font-size: 18px;
+	list-style-type: square;}
+ul.lisCarac {list-style-image: url("Seta18.png");
+	font-size: 16px;}
+li {padding: 10px;
+	margin-top: 10px;}
+table.tabInfo {border-style: solid;
+	border-collapse: collapse;
+	background-color: #FFFFCC;
+	color: #2255AA;
+	margin: auto;
+	font-family: Open Sans, sans-serif;}
+tr,th {border: 3px solid #77CCDD;
+	padding: 6px 6px 4px 6px;}
+th.linTH {color: #FFFFFF;
+	background-color: #0099DD;
+	text-align: center;
+	vertical-align: middle;}
+th.colTH {color: #005599;
+	background-color: #FFFFFF;
+	width: 104px;
+	text-align: center;}
+img.imgTab {width: 100px;
+	height: 100px;}
+table.tabInterna {width: 100%;
+	margin: 0px;}
+th.tabTH {width: 50%;}
+img.tabImg {width: 25px;
+	height: 25px;}
+section.camisas {font-family: Open Sans, sans-serif;}
+div.divCompras {color: #2255AA;
+	background-color: #EEEEAA;
+	padding: 6px 6px 15px 6px;
+	margin: 20px auto;
+	border: 2px solid #77CCDD;
+	width: 570px;}
+textarea.listaCompras {height: 230px;
+	width: 230px;
+	float: right;
+	margin-top: 8px;
+	margin-left: 10px;}
+label.colLabSelProd {height: 40px;
+	width: 260px;
+	float: left;}
+select.colSelProd {width: 160px;
+	float: right;}
+input.linhaProdSel {width: 250px;
+	margin-bottom: 6px;
+	float: left;}
+.elemEsq {display: block;
+	float: left;}
+.elemDir {float: right;
+	display: block;}
+input.impMedio {width: 80px;}
+div.botoes {text-align: right;
+	margin: 20px 10px 0px 10px;}
+fieldset.fsEsq {float: left;
+	display: inline;
+	margin: 0px;}
+fieldset.fsDir {float: right;
+	display: inline;
+	margin: 0px;}
+input.inpGrande {width: 400px;}
+input.impNCC {width: 140px;}
+input.impTelef {width: 90px;}
+textarea.impEnder {width: 200px;
+	height: 60px;}
+input.numDD {width: 30px;}
+input.numQD {width: 50px;}
+div.divLinha {margin-bottom: 6px;}
+label.colPri {float: left;
+	display: block;
+	width: 90px;}
+label.colPriCompras {float: left;
+	display: block;
+	width: 86px;}
+label.colPriPag {float: left;
+	display: block;
+	width: 250px;}
+textarea.comprasFeitas {width: 230px;
+	height: 180px;
+	float: right;
+	margin-top: 8px;
+	margin-left: 10px;}
+.janInfo {text-align: center;}
+img.imgMasc {margin: auto;
+	display: block;
+	border-style: solid;
+	border-color: orange;
+	border-width: 4px;}
+.imgCorMasc {margin: 5px;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	border-style: solid;
+	border-width: 2px;
+	border-color: orange;
+	background-image: url(Imagem3/Preto.png);}
+footer.ender2 {border-top-style: solid;
+	border-top-width: 2px;
+	text-align: center;
+	font-size: 14px;
+	padding: 10px;
+	padding-top: 10px;}
+.imgCamisa {width: 250px;
+	height: 312px;}
+img.imgCel {text-align: center;
+	background-color: #FFFFFF;}
+.colMenu {text-align: center;
+	width: 120px;}
+img.imgTabInt {height: 30px;
+	width: 30px;}
+a:link.colLink {color: #005599}
+a:visited.colLink {color: #005599}
+#vazio {background-image: url(Imagem3/vazio.png);}
+#ModeloLisa {background-image: url(Imagem3/ModeloLisa.png);}
+#ModeloJupiter {background-image: url(Imagem3/ModeloJupiter)}
+#ModeloMarte {background-image: url(Imagem3/ModeloMarte)}
+#ModeloMercurio {background-image: url(Imagem3/ModeloMercurio)}
+#ModeloNetuno {background-image: url(Imagem3/ModeloNetuno)}
+#ModeloPlutao {background-image: url(Imagem3/ModeloPlutao)}
+#ModeloSaturno {background-image: url(Imagem3/ModeloSaturno)}
+#ModeloTerra {background-image: url(Imagem3/ModeloTerra)}
+#ModeloUrano {background-image: url(Imagem3/ModeloUrano)}
+#ModeloVenus {background-image: url(Imagem3/ModeloVenus)}
+#Azul
+#Lilas
+#Produto
+#Cor
+#Tamanho
+#Modelo
+#Mascara
+#divTitulo
+#listaCompras
+#Valor
+#resumo
+#formSelecao
+#valor
+#valor2
